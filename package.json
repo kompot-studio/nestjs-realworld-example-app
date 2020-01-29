@@ -48,13 +48,14 @@
   "devDependencies": {
     "@types/jest": "^23.3.13",
     "@types/node": "^10.12.21",
+    "atob": ">=2.1.0",
+    "deep-extend": ">=0.5.1",
+    "extend": ">=3.0.2",
     "jest": "^24.5.0",
     "nodemon": "^1.18.10",
     "supertest": "^3.0.0",
+    "swagger-ui-express": "^4.1.2",
     "ts-jest": "^24.0.0",
-    "ts-node": "^8.0.3",
-    "deep-extend": ">=0.5.1",
-    "extend": ">=3.0.2",
-    "atob": ">=2.1.0"
+    "ts-node": "^8.0.3"
   }
 }

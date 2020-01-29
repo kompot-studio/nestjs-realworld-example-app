@@ -68,6 +68,9 @@ export class UserService {
   }
 
   async update(id: number, dto: UpdateUserDto): Promise<UserEntity> {
+    this.userRepository.create({
+      email: "dsff",
+    });
     let toUpdate = await this.userRepository.findOne(id);
     delete toUpdate.password;
     delete toUpdate.favorites;
