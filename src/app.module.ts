@@ -6,13 +6,24 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { ProfileModule } from './profile/profile.module';
 import { TagModule } from './tag/tag.module';
+import {join} from "path";
+
+const p =join(__dirname, '/schemas/*.schema.ts');
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(),
-    ArticleModule,
-    UserModule,
-    ProfileModule,
+    TypeOrmModule.forRoot({
+      type: 'mongodb',
+      url: 'mongodb://localhost:27017/nestjs_db',
+      entities: [p],
+      synchronize: true,
+      useNewUrlParser: true,
+      keepConnectionAlive: true,
+      logging: true,
+    }),
+    // ArticleModule,
+    // UserModule,
+    // ProfileModule,
     TagModule
   ],
   controllers: [
